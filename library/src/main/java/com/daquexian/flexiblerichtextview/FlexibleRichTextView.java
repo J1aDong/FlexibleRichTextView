@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.text.Layout;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -151,6 +151,11 @@ public class FlexibleRichTextView extends LinearLayout {
 
     public void setText(String text, List<Attachment> attachmentList) {
         text = text.replaceAll("\u00AD", "");
+
+        text = text.replaceAll("begin\\{align\\}","begin\\{aligned\\}");
+        text = text.replaceAll("end\\{align\\}","end\\{aligned\\}");
+
+        text = text.replaceAll("<br />","\\\n");
 
         mAttachmentList = attachmentList;
         mTokenList = tokenizer(text, mAttachmentList);

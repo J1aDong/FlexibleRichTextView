@@ -1,6 +1,6 @@
 package com.example.daquexian.flexiblerichtextview;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.daquexian.flexiblerichtextview.Attachment;
@@ -32,25 +32,9 @@ public class MainActivity extends AppCompatActivity {
         FlexibleRichTextView flexibleRichTextView = (FlexibleRichTextView) findViewById(R.id.frtv);
         Tokenizer.setCenterStartLabels("<center>");
         Tokenizer.setCenterEndLabels("</center>");
-        Tokenizer.setTitleStartLabels("<h>");
-        Tokenizer.setTitleEndLabels("</h>");
+        Tokenizer.setTitleStartLabels("<h>","<p>");
+        Tokenizer.setTitleEndLabels("</h>","</p>");
 
-        flexibleRichTextView.setText("<h><center>hi!</center></h>" +
-                        "[quote]This is quote\n" +
-                        "second line\n" +
-                        "third line\n" +
-                        "fourth line[/quote]" +
-                        "Here is an attachment:[attachment:53ce1]" +
-                        "[code]print(\"Hello FlexibleRichTextView!\")[/code]" +
-                        "Hello FlexibleRichTextView!\n" +
-                        "This is LaTeX:\n" +
-                        "$e^{\\pi i} + 1 = 0$\n" +
-                        "This is table:\n" +
-                        "| First Header  | Second Header |\n" +
-                        "| --- | --- |\n" +
-                        "| Content Cell  | Content Cell  |\n" +
-                        "| Content Cell  | Content Cell  |\n" +
-                        "An attachment is shown at the bottom: \n",
-                attachments);
+        flexibleRichTextView.setText("<p> 若x，y满足约束条件\\(\\left\\{ \\begin{align} & \\text{2x}+y\\text{-}2\\leqslant 0 \\\\ & \\text{x}-y\\text{-}1\\geqslant 0 \\\\ & \\text{y}+1\\geqslant 0 \\\\ \\end{align} \\right.\\)，则z=x+7y的最大值为_____.<br />我的测试</p>");
     }
 }
