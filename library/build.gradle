@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.J1aDong'
-version = '1.0.0'
+version = '1.0.1'
 
 android {
     compileSdkVersion 28
@@ -46,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.J1aDong'
                 artifactId = 'flexiblerichtextview'
-                version = '1.0.0'
+                version = '1.0.1'
             }
         }
     }
